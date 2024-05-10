@@ -1,4 +1,4 @@
-<main id="trajetoria" class="w-full mt-10 trajetoria">
+<main class="w-full mt-10 trajetoria">
     <div class="mx-auto max-w-5xl pt-4 relative flex items-center flex-col">
 
       <div class="w-2 mt-10 h-full bg-gradient-to-b from-purple-800 to-orange-500 absolute -z-10">
@@ -8,7 +8,7 @@
         Trajetória
       </h2>
 
-      <div class="relative flex items-center flex-col w-full space-y-12 pb-9">
+      <div id="trajetoria" class="relative flex items-center flex-col w-full space-y-12 pb-9">
 
         <div *ngFor="let item of trajetorias; index as i"
           [class.justify-end]="i % 2 == 0"
