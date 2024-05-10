@@ -1,18 +1,36 @@
-<main class="mx-auto max-w-5xl flex mt-10">
+<main id="sobre-mim" class="relative mx-auto max-w-5xl flex flex-col items-center space-y-5 mt-10">
 
-    <div class="w-1/2">
-      <img src="/assets/Me.jpg" alt="Foto Bruno Vicente" id="pic-sobre-mim">
-    </div>
-    <div class="w-1/2 flex flex-col items-center justify-center space-y-5" id="text-sobre-mim">
-      <h2 class="uppercase text-4xl font-semibold text-purple-800">Sobre mim</h2>
-      <p class="text-justify text-orange-400">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibur
-        placeat inventore praesentium impedit itaque dolorem, nam, aperiam tenetur, rem repellat
-        exercitationem? Cumque, eaque quae ea veniam facere amet eligendi.
-        Rem excepturi, molestias praesentium aspernatur ad error recusandae, fuga ab molestiae
-        autem tempora vero consequatur sint voluptatum architecto fugiat animi maxime perferendis.
-        Id ducimus accusamus quas eum quam. Nulla, architecto?
-      </p>
+    <div class="w-full flex">
+      <div class="w-1/2 relative">
+        <img src="/assets/Me.jpg" alt="Foto Bruno Vicente" id="pic-sobre-mim">
+      </div>
+      <div class="w-1/2 flex flex-col items-center justify-center space-y-5" id="text-sobre-mim">
+        <h2 class="uppercase text-4xl font-semibold text-purple-800">Sobre mim</h2>
+        <p class="text-justify text-orange-500">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibur
+          placeat inventore praesentium impedit itaque dolorem, nam, aperiam tenetur, rem repellat
+          exercitationem? Cumque, eaque quae ea veniam facere amet eligendi.
+          Rem excepturi, molestias praesentium aspernatur ad error recusandae, fuga ab molestiae
+          autem tempora vero consequatur sint voluptatum architecto fugiat animi maxime perferendis.
+          Id ducimus accusamus quas eum quam. Nulla, architecto?
+        </p>
+      </div>
     </div>
 
+    <a href="/home#trajetoria">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6">
+
+        <defs>
+          <linearGradient id="linear-gradient"
+              x1="0%" y1="0%"
+              x2="100%" y2="0%"
+          >
+              <stop offset="0%" stop-color="#f97316"/>
+              <stop offset="100%" stop-color="#6b21a8"/>
+          </linearGradient>
+      </defs>
+
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="url(#linear-gradient)" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+    </a>
 </main>
