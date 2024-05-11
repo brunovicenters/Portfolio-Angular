@@ -9,15 +9,22 @@
   }
 }
 
-@keyframes opacity {
+@keyframes imgAnimate {
   0% {
+    transform: scale(2);
+    opacity: 0%;
+    box-shadow: none;
+  }
+  15% {
     opacity: 0%;
   }
-  25% {
-    opacity: 0%;
+  30% {
+    opacity: 10%;
   }
   100% {
+    transform: scale(1);
     opacity: 100%;
+    box-shadow: 0px 0px 10px 2px black;
   }
 }
 
@@ -29,10 +36,7 @@
   animation: 1s ease-out 0s 1 slideInFromRight;
 }
 
-#pic-sobre-mim {
-  animation: 1s ease-out opacity;
-}
-
-.gradient-poster {
-  background: radial-gradient(rgba(0,0,0,0) 10%, #eee);
+.pic-sobre-mim {
+  animation: 1s ease-out imgAnimate;
+  box-shadow: 0px 0px 10px 2px black;
 }
