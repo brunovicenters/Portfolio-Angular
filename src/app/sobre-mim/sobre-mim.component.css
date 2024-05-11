@@ -13,7 +13,7 @@
   0% {
     opacity: 0%;
   }
-  15% {
+  25% {
     opacity: 0%;
   }
   100% {
@@ -31,4 +31,8 @@
 
 #pic-sobre-mim {
   animation: 1s ease-out opacity;
+}
+
+.gradient-poster {
+  background: radial-gradient(rgba(0,0,0,0) 10%, #eee);
 }
