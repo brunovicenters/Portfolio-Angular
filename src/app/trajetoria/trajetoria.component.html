@@ -15,10 +15,16 @@
           [class.justify-start]="i % 2 != 0"
           [class.self-start]="i % 2 == 0"
           [class.self-end]="i % 2 != 0"
-          class="flex w-3/6 relative items-center self-start"
+          class="flex w-3/6 relative items-center self-start relative"
         >
-          <p *ngIf="i % 2 == 0 else impar" class="pr-5 flex items-center w-full text-xl text-indigo-600 uppercase relative">
-            <span class="w-4/6 text-center">{{item.achivement}}</span>
+
+          <p *ngIf="i % 2 == 0 else impar" class="pr-5 flex trajetoria-item items-center w-full text-xl text-indigo-600 uppercase relative">
+            <span class="descricao absolute w-2/3 bg-red-500">
+              {{item.description}}
+            </span>
+            <span class="w-4/6 text-center">
+              {{item.achivement}}
+            </span>
             <span class="text-4xl text-orange-400 uppercase w-2/6 text-end">- {{item.year}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 absolute -right-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />

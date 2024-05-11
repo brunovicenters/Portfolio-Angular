@@ -19,3 +19,11 @@
     animation-timeline: scroll();
   }
 }
+
+.descricao{
+  display: none;
+}
+
+.trajetoria-item:hover > .descricao {
+  display: block;
+}
