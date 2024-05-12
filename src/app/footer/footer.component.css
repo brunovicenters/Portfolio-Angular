@@ -1,0 +1,38 @@
+.nav > a{
+  text-shadow: 0px 3px 3px  black;
+}
+
+.icon {
+  background: linear-gradient(-90deg, #f97316 50%, #6b21a8);
+  box-shadow: 0 10px 20px 1px black;
+}
+
+.icon:hover span {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.youtube:hover,
+.youtube:hover span,
+.youtube:hover span::before {
+  background: #FF0000;
+  color: #fff;
+}
+
+.github:hover,
+.github:hover span,
+.github:hover span::before {
+  background: #9f7be1;
+  color: #fff;
+}
+
+.instagram:hover,
+.instagram:hover span,
+.instagram:hover span::before {
+  background: #e4405f;
+  color: #fff;
+}
+
