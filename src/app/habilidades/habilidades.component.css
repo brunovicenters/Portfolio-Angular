@@ -1,0 +1,35 @@
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    transform: translateX(-200%);
+  }
+  55% {
+    transform: translateX(0%);
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  30% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .title-habilidades {
+    animation: 0.5s ease-in-out slideRight;
+    animation-timeline: scroll();
+  }
+  .skills {
+    animation: 0.5s ease-in-out slideLeft;
+    animation-timeline: scroll();
+  }
+}
