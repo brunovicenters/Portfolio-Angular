@@ -11,6 +11,12 @@ import { Projeto } from '../../model/projetoModel';
 })
 export class ProjectsComponent {
 
+  hidden: boolean = true;
+
+  modalName: string = '';
+  modalDescription: string = '';
+  modalImage: string = '';
+
   projetos: Projeto[] = [
     new Projeto( "yelp-camp", "Yelp Camp", "Um sistema CRUD completo para um site de divulgação e avaliação de acampamentos. Feito com ExpressJS, MongoDB e Bootstrap.", "/assets/yelp-camp.png"),
     new Projeto( "fox-brinquedos", "Fox Brinquedos", "Um e-commerce de brinquedos feito em Laravel, utilizando Tailwind. Completo, com todas as operações e telas existentes num site de vendas.", "/assets/fox-brinquedos.png"),
@@ -22,4 +28,15 @@ export class ProjectsComponent {
     new Projeto( "pizzaria-novais", "Pizzaria Novais", "Projeto acadêmico feito com CSS e HTML, com foco na aprendizagem da responsividade.", "/assets/pizzaria-novais.png"),
     new Projeto( "ci-autoconhecimento", "CI Autoconhecimento", "Um projeto interno de aulas para autoconhecimento, com dinâmicas lúdicas e diferenciadas.", "/assets/ci-autoconhecimento.png"),
   ]
+
+  showModal(name: string, desc: string, img: string){
+    this.modalName = name;
+    this.modalDescription = desc;
+    this.modalImage = img;
+    this.hidden = false;
+  }
+
+  closeModal(){
+    this.hidden = true;
+  }
 }
