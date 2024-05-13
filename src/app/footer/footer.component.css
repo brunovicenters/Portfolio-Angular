@@ -1,10 +1,10 @@
 .nav > a{
-  text-shadow: 0px 3px 3px  black;
+  text-shadow: 0px 3px 10px  rgba(0, 0, 0, 0.5);
 }
 
 .icon {
   background: linear-gradient(-90deg, #f97316 50%, #6b21a8);
-  box-shadow: 0 10px 20px 1px black;
+  box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
 .icon:hover span {
