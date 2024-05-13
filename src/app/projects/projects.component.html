@@ -1,4 +1,4 @@
-<main id="projects" class="mx-auto max-w-5xl mt-8 mb-8 flex flex-col">
+<main id="projects" class="mx-auto max-w-5xl mt-8 mb-8 flex flex-col relative">
 
   <h2 class="project-title uppercase text-4xl text-center font-semibold bg-gradient-to-t from-purple-800 to-orange-500 text-transparent bg-clip-text inline-block">
     Projetos
@@ -7,14 +7,54 @@
   <section class="max-w-full mt-4 flex justify-between items-end flex-wrap space-y-3">
 
     <div *ngFor="let projeto of projetos" class="h-80 w-80 px-3 card-project hover:scale-110">
-      <button class="w-full h-full flex flex-col items-center justify-evenly">
-        <img class="w-full h-3/4 object-cover shadow-lg" [src]="projeto.image" alt="">
-        <h3 class="text-3xl bg-gradient-to-t from-purple-800 to-orange-500 text-transparent bg-clip-text inline-block">Projeto</h3>
+      <button (click)="showModal(projeto.name, projeto.description, projeto.image)" class="w-full h-full flex flex-col items-center justify-evenly">
+        <img class="w-full h-3/4 object-cover shadow-lg" [src]="projeto.image" [alt]="projeto.description">
+        <h3 class="text-3xl bg-gradient-to-t from-purple-800 to-orange-500 text-transparent bg-clip-text inline-block">
+          {{projeto.name}}
+        </h3>
       </button>
-
-
     </div>
 
   </section>
+
+  <div [class.hidden]="hidden" class="fixed left-2/4 z-50 flex justify-center items-center w-full md:inset-0 h-full bg-black/30">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+              <div class="flex items-center justify-between border-b rounded-t">
+                <img class="w-full h-72 object-cover" [src]="modalImage" [alt]="modalDescription">
+              </div>
+              <!-- Modal body -->
+              <div class="space-y-4">
+                  <div class="p-4 md:p-5 flex items-center justify-center shadow border-b relative">
+                    <h3 class="text-xl font-semibold uppercase font-semibold bg-gradient-to-t from-purple-800 to-orange-500 text-transparent bg-clip-text inline-block">
+                        {{modalName}}
+                    </h3>
+                    <button (click)="closeModal()" type="button" class="absolute right-5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <defs>
+                            <linearGradient id="linear-gradient"
+                                x1="0%" y1="0%"
+                                x2="100%" y2="0%"
+                            >
+                                <stop offset="0%" stop-color="#f97316"/>
+                                <stop offset="100%" stop-color="#6b21a8"/>
+                            </linearGradient>
+                          </defs>
+
+                          <path stroke="url(#linear-gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <div class="p-4 md:p-5">
+                    <p class="text-base leading-relaxed text-gray-800">
+                      {{modalDescription}}
+                    </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 </main>
