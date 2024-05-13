@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Projeto } from '../../model/projetoModel';
 
 @Component({
@@ -10,6 +10,18 @@ import { Projeto } from '../../model/projetoModel';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+
+  constructor(private renderer: Renderer2) { }
+
+  // Function to disable scrolling
+  disableScroll() {
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+  }
+
+  // Function to enable scrolling
+  enableScroll() {
+    this.renderer.removeStyle(document.body, 'overflow');
+  }
 
   hidden: boolean = true;
 
@@ -34,9 +46,13 @@ export class ProjectsComponent {
     this.modalDescription = desc;
     this.modalImage = img;
     this.hidden = false;
+
+    this.disableScroll();
   }
 
   closeModal(){
     this.hidden = true;
+
+    this.enableScroll();
   }
 }
